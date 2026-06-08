@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multi Timezone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🕐 Digital World Clock</h1>
+        
+        <div class="clock-grid">
+            <div class="clock-card">
+                <h2>New York</h2>
+                <div class="timezone">EST/EDT</div>
+                <div class="time" id="ny-time">00:00:00</div>
+                <div class="date" id="ny-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>London</h2>
+                <div class="timezone">GMT/BST</div>
+                <div class="time" id="london-time">00:00:00</div>
+                <div class="date" id="london-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>Tokyo</h2>
+                <div class="timezone">JST</div>
+                <div class="time" id="tokyo-time">00:00:00</div>
+                <div class="date" id="tokyo-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>Sydney</h2>
+                <div class="timezone">AEDT/AEST</div>
+                <div class="time" id="sydney-time">00:00:00</div>
+                <div class="date" id="sydney-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>Dubai</h2>
+                <div class="timezone">GST</div>
+                <div class="time" id="dubai-time">00:00:00</div>
+                <div class="date" id="dubai-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>Singapore</h2>
+                <div class="timezone">SGT</div>
+                <div class="time" id="singapore-time">00:00:00</div>
+                <div class="date" id="singapore-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>Los Angeles</h2>
+                <div class="timezone">PST/PDT</div>
+                <div class="time" id="la-time">00:00:00</div>
+                <div class="date" id="la-date">--/--/----</div>
+            </div>
+
+            <div class="clock-card">
+                <h2>India</h2>
+                <div class="timezone">IST</div>
+                <div class="time" id="india-time">00:00:00</div>
+                <div class="date" id="india-date">--/--/----</div>
+            </div>
+        </div>
+
+        <div class="utc-section">
+            <h3>UTC Time</h3>
+            <div class="utc-time" id="utc-time">00:00:00</div>
+            <div class="utc-date" id="utc-date">--/--/----</div>
+        </div>
+
+        <div class="controls">
+            <button id="toggle-format">12-Hour Format</button>
+            <button id="add-timezone">+ Add Timezone</button>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+</body>
+</html>
