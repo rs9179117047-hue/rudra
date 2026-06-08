@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+*.egg-info/
+*.egg
+
+# SAM
+.aws-sam/
+build/
+samconfig.toml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+# AWS
+.env
+aws_credentials
