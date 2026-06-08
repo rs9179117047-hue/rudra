@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: LLM Chatbot on AWS Lambda using Bedrock
+
+Globals:
+  Function:
+    Timeout: 60
+    Memory: 512
+    Runtime: python3.11
+
+Parameters:
+  ModelId:
+    Type: String
+    Default: anthropic.claude-3-sonnet-20240229-v1:0
+
+Resources:
+  ChatbotFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: ai-chatbot-lambda
+      CodeUri: lambda/
+      Handler: chatbot.lambda_handler
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Action:
+                - bedrock:InvokeModel
+              Resource: !Sub "arn:aws:bedrock:${AWS::Region}::*"
+      Events:
+        ChatAPI:
+          Type: Api
+          Properties:
+            RestApiId: !Ref ChatAPI
+            Path: /chat
+            Method: POST
+
+  ChatAPI:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+
+Outputs:
+  ApiEndpoint:
+    Value: !Sub "https://${ChatAPI}.execute-api.${AWS::Region}.amazonaws.com/prod/chat"
